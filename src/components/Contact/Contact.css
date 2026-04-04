@@ -1,0 +1,215 @@
+.contact{
+
+padding:90px 20px;
+
+font-family:'Playfair Display', serif;
+
+background:#f5f3f1;
+
+color:#2b2b2b;
+
+}
+
+/* wrapper */
+.contact-wrapper{
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+/* title */
+.contact-title{
+
+text-align:center;
+
+font-size:40px;
+
+margin-bottom:40px;
+
+font-weight:500;
+
+}
+
+/* layout */
+.contact-box{
+
+display:grid;
+
+gap:30px;
+
+}
+
+/* cards */
+.contact-left,
+.contact-right{
+
+background:white;
+
+padding:30px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+/* left text */
+.contact-left h4{
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+.contact-left p{
+
+font-size:14px;
+
+margin-bottom:10px;
+
+opacity:.8;
+
+}
+
+/* links */
+.links{
+
+margin-top:20px;
+
+font-size:13px;
+
+opacity:.7;
+
+}
+
+/* form */
+.contact-right h4{
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+/* inputs */
+.contact-right input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:12px;
+
+border:1px solid #ddd;
+
+outline:none;
+
+font-size:14px;
+
+}
+
+/* subscribe button */
+.subscribe-row{
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+.subscribe-row button{
+
+padding:8px 18px;
+
+border:1px solid black;
+
+background:white;
+
+cursor:pointer;
+
+font-size:13px;
+
+transition:.3s;
+
+}
+
+.subscribe-row button:hover{
+
+background:black;
+
+color:white;
+
+}
+
+/* checkbox */
+.checkbox{
+
+font-size:12px;
+
+opacity:.7;
+
+display:flex;
+
+gap:8px;
+
+margin-top:10px;
+
+}
+
+/* chat button */
+.chat-btn{
+
+margin-top:40px;
+
+padding:12px 26px;
+
+border:none;
+
+border-radius:25px;
+
+background:black;
+
+color:white;
+
+cursor:pointer;
+
+display:block;
+
+margin-left:auto;
+
+}
+
+/* tablet */
+@media(min-width:768px){
+
+.contact-box{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.contact-title{
+
+font-size:48px;
+
+}
+
+}
+
+/* desktop */
+@media(min-width:1024px){
+
+.contact{
+
+padding:120px 20px;
+
+}
+
+.contact-title{
+
+font-size:55px;
+
+}
+
+}

@@ -1,0 +1,135 @@
+.about{
+
+padding:90px 20px;
+
+text-align:center;
+
+background:#f7f5f3;
+
+font-family:'Playfair Display', serif;
+
+color:#1a1a1a;
+
+}
+
+/* small heading */
+.about-small{
+
+font-size:11px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+opacity:.6;
+
+display:block;
+
+margin-bottom:25px;
+
+}
+
+/* title */
+.about h2{
+
+max-width:720px;
+
+margin:auto;
+
+margin-bottom:25px;
+
+font-size:30px;
+
+font-weight:500;
+
+line-height:1.5;
+
+}
+
+/* elegant divider */
+.divider{
+
+width:60px;
+height:1px;
+
+background:#d6d1cc;
+
+margin:25px auto;
+
+}
+
+/* paragraph */
+.about p{
+
+max-width:620px;
+
+margin:auto;
+
+font-size:15px;
+
+line-height:1.9;
+
+opacity:.75;
+
+margin-bottom:35px;
+
+}
+
+/* signature */
+.signature{
+
+font-size:18px;
+
+letter-spacing:2px;
+
+opacity:.6;
+
+}
+
+/* tablet */
+@media(min-width:768px){
+
+.about{
+
+padding:110px 20px;
+
+}
+
+.about h2{
+
+font-size:36px;
+
+}
+
+.about p{
+
+font-size:16px;
+
+}
+
+}
+
+/* desktop */
+@media(min-width:1024px){
+
+.about{
+
+padding:130px 20px;
+
+}
+
+.about h2{
+
+font-size:40px;
+
+max-width:760px;
+
+}
+
+.about p{
+
+max-width:680px;
+
+}
+
+}

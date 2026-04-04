@@ -1,0 +1,257 @@
+/* NAVBAR */
+
+.nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:22px 70px;
+
+z-index:1000;
+
+font-family:'Playfair Display', serif;
+
+transition: all .35s ease;
+
+}
+
+
+/* scroll effect */
+
+.nav-scroll{
+
+background:rgba(255,255,255,0.75);
+
+backdrop-filter: blur(12px);
+
+box-shadow:0 10px 35px rgba(0,0,0,.05);
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+font-size:22px;
+text-align: center;
+
+font-weight:500;
+
+letter-spacing:2px;
+
+cursor:pointer;
+
+}
+
+
+/* DESKTOP LINKS */
+
+.links{
+
+display:flex;
+
+gap:50px;
+
+}
+
+
+/* LINK STYLE */
+
+.links a{
+
+text-decoration:none;
+
+color:#111;
+
+font-size:14px;
+
+letter-spacing:1.5px;
+
+position:relative;
+
+transition:.3s;
+
+}
+
+
+/* underline animation */
+
+.links a::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+bottom:-8px;
+
+width:0%;
+
+height:1px;
+
+background:#111;
+
+transform:translateX(-50%);
+
+transition:.35s;
+
+}
+
+
+.links a:hover{
+
+opacity:.7;
+
+}
+
+
+.links a:hover::after{
+
+width:60%;
+
+}
+
+
+/* MOBILE ICON */
+
+.menu-icon{
+
+font-size:28px;
+
+cursor:pointer;
+
+display:none;
+
+transition:.3s;
+
+}
+
+
+.menu-icon:hover{
+
+transform:scale(1.08);
+
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu{
+
+position:fixed;
+
+top:0;
+right:-100%;
+
+width:100%;
+height:100vh;
+
+background:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+transition:.45s cubic-bezier(.77,0,.18,1);
+
+}
+
+
+.mobile-menu.open{
+
+right:0;
+
+}
+
+
+/* MOBILE LINKS */
+
+.mobile-menu a{
+
+font-size:26px;
+
+text-decoration:none;
+
+color:#111;
+
+letter-spacing:2px;
+
+transition:.3s;
+
+}
+
+
+.mobile-menu a:hover{
+
+opacity:.6;
+
+transform:translateY(-2px);
+
+}
+
+
+/* CLOSE ICON */
+
+.close{
+
+position:absolute;
+
+top:35px;
+right:40px;
+
+font-size:30px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.close:hover{
+
+transform:rotate(90deg);
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.nav{
+
+padding:20px 28px;
+
+}
+
+.links{
+
+display:none;
+
+}
+
+.menu-icon{
+
+display:block;
+
+}
+
+}

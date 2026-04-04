@@ -1,0 +1,159 @@
+.portfolio{
+
+padding:80px 20px;
+
+text-align:center;
+
+background:#fafafa;
+
+font-family:'Playfair Display', serif;
+
+}
+
+/* small heading */
+.tag{
+
+font-size:11px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+opacity:.6;
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+/* title */
+.portfolio h2{
+
+margin-bottom:40px;
+
+font-size:30px;
+
+font-weight:500;
+
+}
+
+/* grid */
+.portfolio-grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+max-width:1000px;
+
+margin:auto;
+
+}
+
+/* image wrapper */
+.portfolio-grid img{
+
+width:100%;
+
+aspect-ratio:1/1;
+
+object-fit:cover;
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+/* hover effect */
+.portfolio-grid img:hover{
+
+transform:scale(1.08);
+
+filter:brightness(.85);
+
+}
+
+/* button */
+.view-btn{
+
+margin-top:35px;
+
+padding:12px 30px;
+
+border:1px solid black;
+
+background:white;
+
+color:black;
+
+font-size:12px;
+
+letter-spacing:2px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+/* button hover */
+.view-btn:hover{
+
+background:black;
+
+color:white;
+
+}
+
+/* tablet */
+@media(min-width:600px){
+
+.portfolio-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+}
+
+/* laptop */
+@media(min-width:900px){
+
+.portfolio-grid{
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.portfolio h2{
+
+font-size:36px;
+
+}
+
+}
+
+/* desktop */
+@media(min-width:1200px){
+
+.portfolio{
+
+padding:110px 40px;
+
+}
+
+.portfolio-grid{
+
+max-width:1100px;
+
+}
+
+}
