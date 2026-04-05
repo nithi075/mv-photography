@@ -3,7 +3,7 @@ import heroImage from "../../assets/hero.jpeg";
 
 export default function Hero() {
   const whatsappNumber = "919952397023";
-  const message = "Hello MV Photography, I would like to book a luxury photography session. Please share details.";
+  const message = "Hello Jeno Photography, I would like to book a luxury photography session. Please share details.";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -16,7 +16,6 @@ export default function Hero() {
 
       <div className="hero-content">
         <div className="hero-text-wrapper">
-          <span className="hero-tag">EST. 2024 • PREMIUM STUDIO</span>
           
           <h1 className="hero-title">
             Capturing Moments <br />

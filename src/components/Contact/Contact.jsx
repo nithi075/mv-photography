@@ -54,7 +54,7 @@ export default function Contact() {
         <div className="contact-footer">
           <div className="footer-line"></div>
           <div className="policy-links">
-            <span>&copy; 2026 MV Photography</span>
+            <span>&copy; 2026 Jeno Photography</span>
             <a href="#">Privacy Policy</a>
             <a href="#">Studio Policy</a>
           </div>
