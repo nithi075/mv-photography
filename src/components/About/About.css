@@ -119,3 +119,139 @@
   .about-main-title { font-size: 2.5rem; }
   .about-stats { flex-direction: column; gap: 30px; }
 }
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:1024px){
+
+  .about{
+
+    padding:110px 28px;
+
+  }
+
+  .about-wrapper{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .about-main-title{
+
+    font-size:2.4rem;
+
+    letter-spacing:-0.5px;
+
+  }
+
+  .about-lead{
+
+    font-size:1.1rem;
+
+  }
+
+  .about-body{
+
+    font-size:.95rem;
+
+  }
+
+  .about-stats{
+
+    gap:40px;
+
+  }
+
+}
+
+
+/* mobile */
+
+@media (max-width:600px){
+
+  .about{
+
+    padding:90px 20px;
+
+  }
+
+  .about-tag{
+
+    font-size:.6rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+  }
+
+  .about-main-title{
+
+    font-size:1.9rem;
+
+    line-height:1.2;
+
+  }
+
+  .about-lead{
+
+    font-size:.95rem;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+  }
+
+  .about-body{
+
+    font-size:.85rem;
+
+    line-height:1.7;
+
+    margin-bottom:35px;
+
+  }
+
+  .about-stats{
+
+    flex-direction:row;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:40px;
+
+  }
+
+  .stat-num{
+
+    font-size:1.6rem;
+
+  }
+
+  .stat-label{
+
+    font-size:.55rem;
+
+    letter-spacing:1.5px;
+
+  }
+
+  .about-footer{
+
+    gap:15px;
+
+  }
+
+  .signature-text{
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+  }
+
+}

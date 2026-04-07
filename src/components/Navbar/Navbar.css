@@ -421,3 +421,139 @@
   }
 
 }
+/* MOBILE OPTIMIZATION */
+
+@media (max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+    width:32px;
+    height:24px;
+  }
+
+  .navbar{
+    height:70px;
+  }
+
+  .nav-container{
+    padding:0 16px;
+  }
+
+  /* logo */
+
+  .brand-logo-img{
+    height:36px;
+  }
+
+  .brand-name{
+    font-size:1.05rem;
+    letter-spacing:2.5px;
+  }
+
+  .brand-sub{
+    font-size:.5rem;
+    letter-spacing:1.8px;
+  }
+
+
+  /* mobile menu */
+
+  .mobile-menu{
+    padding:0 22px;
+  }
+
+  .mobile-links-wrapper{
+    gap:18px;
+  }
+
+  .mobile-menu a{
+
+    font-size:1.25rem;
+
+    letter-spacing:2.5px;
+
+  }
+
+  .mobile-menu a span{
+
+    font-size:.55rem;
+
+    padding:2px 7px;
+
+  }
+
+  .menu-backdrop-text{
+
+    font-size:18vh;
+
+    opacity:.04;
+
+  }
+
+
+  /* footer */
+
+  .mobile-footer{
+
+    bottom:28px;
+
+  }
+
+  .mobile-footer p{
+
+    font-size:.55rem;
+
+    letter-spacing:1.8px;
+
+  }
+
+  .social-links{
+
+    font-size:.7rem;
+
+  }
+
+}
+
+
+/* small mobile */
+
+@media (max-width:480px){
+
+  .navbar{
+
+    height:65px;
+
+  }
+
+  .brand-logo-img{
+
+    height:32px;
+
+  }
+
+  .brand-name{
+
+    font-size:.95rem;
+
+  }
+
+  .mobile-menu a{
+
+    font-size:1.1rem;
+
+    letter-spacing:2px;
+
+  }
+
+  .menu-backdrop-text{
+
+    font-size:15vh;
+
+  }
+
+}
