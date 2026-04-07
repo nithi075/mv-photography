@@ -467,3 +467,77 @@
   }
 
 }
+/* perfect center alignment */
+
+.menu-toggle{
+
+  display:none;
+
+  width:30px;
+  height:20px;
+
+  position:relative;
+
+  background:none;
+  border:none;
+
+  cursor:pointer;
+
+  z-index:2500;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+
+/* lines */
+
+.menu-toggle span{
+
+  position:absolute;
+
+  height:2px;
+
+  background:black;
+
+  transition:.4s;
+
+}
+
+
+/* balanced position */
+
+.line-top{
+
+  top:6px;
+  width:26px;
+
+}
+
+.line-bottom{
+
+  top:14px;
+  width:18px;
+
+}
+
+
+/* open animation */
+
+.open .line-top{
+
+  transform:rotate(45deg) translateY(4px);
+
+  width:26px;
+
+}
+
+.open .line-bottom{
+
+  transform:rotate(-45deg) translateY(-4px);
+
+  width:26px;
+
+}
