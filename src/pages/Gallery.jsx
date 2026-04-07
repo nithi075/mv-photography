@@ -1,7 +1,7 @@
 import React from "react";
 import "./Gallery.css";
 
-// Replace these with your actual local file paths
+// Assets
 import wedding from "../assets/wedding1.jpeg";
 import wedding2 from "../assets/img2.jpeg";
 import couple from "../assets/img3.jpeg";
@@ -15,24 +15,24 @@ import cinematic from "../assets/cinematic.jpeg";
 
 export default function Gallery() {
   const items = [
-    { title: "Wedding Photography", img: wedding, isFeatured: true },
-    { title: "Signature Wedding", img: wedding2, isFeatured: false },
-    { title: "Couple Moments", img: couple, isFeatured: false },
-    { title: "Portrait Studio", img: portrait, isFeatured: true },
-    { title: "Candid Photography", img: candid, isFeatured: false },
-    { title: "Engagement Shoot",       img: engagement, isFeatured: false },
-    { title: "Reception Coverage",  img: reception, isFeatured: false },
-    { title: "Bridal Portraits",  img: bride, isFeatured: true },
-    { title: "Traditional Wedding",  img: traditional, isFeatured: false },
-    { title: "Cinematic Shoots",  img: cinematic, isFeatured: false },
+    { title: "Wedding Photography", img: wedding, isFeatured: true, category: "Ceremony" },
+    { title: "Signature Wedding", img: wedding2, isFeatured: false, category: "Luxury" },
+    { title: "Couple Moments", img: couple, isFeatured: false, category: "Portraits" },
+    { title: "Portrait Studio", img: portrait, isFeatured: true, category: "Editorial" },
+    { title: "Candid Photography", img: candid, isFeatured: false, category: "Realism" },
+    { title: "Engagement Shoot", img: engagement, isFeatured: false, category: "Events" },
+    { title: "Reception Coverage", img: reception, isFeatured: false, category: "Grandeur" },
+    { title: "Bridal Portraits", img: bride, isFeatured: true, category: "Fashion" },
+    { title: "Traditional Wedding", img: traditional, isFeatured: false, category: "Culture" },
+    { title: "Cinematic Shoots", img: cinematic, isFeatured: false, category: "Films" },
   ];
 
   return (
     <section className="gallery">
-      {/* Header Section */}
+      {/* Editorial Header */}
       <div className="gallery-header">
         <span className="gallery-tag">Portfolio Collection</span>
-        <h2 className="gallery-title">Timeless Visual Stories</h2>
+        <h2 className="gallery-title">Timeless <span className="accent">Visual</span> Stories</h2>
         <p className="gallery-subtitle">
           Explore our signature photography collections crafted
           with timeless elegance and cinematic storytelling.
@@ -44,11 +44,12 @@ export default function Gallery() {
           className="gallery-cta"
         >
           Book Your Session
+          <span className="cta-arrow">→</span>
         </a>
       </div>
 
-      {/* Grid Section */}
-      <div className="gallery-masonry">
+      {/* Masonry Grid Section */}
+      <div className="gallery-grid">
         {items.map((item, index) => (
           <div 
             className={`gallery-item ${item.isFeatured ? "featured" : ""}`} 
@@ -56,10 +57,14 @@ export default function Gallery() {
           >
             <div className="gallery-image-box">
               <img src={item.img} alt={item.title} loading="lazy" />
-              <div className="gallery-info">
-                <span className="item-category">{item.category}</span>
-                <h3 className="item-title">{item.title}</h3>
-                <div className="item-arrow">→</div>
+              <div className="gallery-overlay">
+                <div className="overlay-top">
+                  <span className="item-category">{item.category}</span>
+                </div>
+                <div className="overlay-bottom">
+                  <h3 className="item-title">{item.title}</h3>
+                  <div className="item-link">Explore Gallery →</div>
+                </div>
               </div>
             </div>
           </div>

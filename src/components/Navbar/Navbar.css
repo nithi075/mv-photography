@@ -1,173 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+
 :root {
-  --gold: #c5a059;
+  --accent: #FF8C00; /* MV Logo Orange */
+  --text: #111;
+  --muted: #666;
   --white: #ffffff;
-  --black: #0a0a0a;
-  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --bg-alpha: rgba(255, 255, 255, 0.8);
+  --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav {
+/* --- RESET & BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 30px 0;
-  z-index: 1000;
+  top: 0;
+  height: 100px;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  background: transparent;
   transition: var(--transition);
+  border-bottom: 1px solid transparent;
 }
 
-/* Scroll Effect: Glassmorphism */
-.nav-scroll {
-  padding: 15px 0;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* Scrolled State - Premium Glass Effect */
+.nav-scrolled {
+  height: 80px;
+  background: var(--bg-alpha);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Force White when Mobile Menu is Active */
+.nav-active {
+  background: var(--white) !important;
 }
 
 .nav-container {
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  color: var(--white);
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  font-weight: 500;
-  cursor: pointer;
+/* --- BRANDING --- */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
 }
 
-.logo span {
-  color: var(--gold);
-  font-weight: 300;
-  font-style: italic;
-  font-size: 0.9rem;
-  display: block;
-  line-height: 0.5;
+.brand-logo-img {
+  height: 55px;
+  transition: var(--transition);
+}
+
+.nav-scrolled .brand-logo-img {
+  height: 48px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  line-height: 0.9;
+  color: var(--text);
+}
+
+.brand-sub {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
   letter-spacing: 4px;
+  color: var(--accent);
+  margin-top: 5px;
   text-transform: uppercase;
 }
 
-/* Desktop Navigation */
+/* --- DESKTOP NAVIGATION --- */
 .nav-links {
   display: flex;
+  gap: 45px;
   align-items: center;
-  gap: 40px;
 }
 
-.link-item {
-  color: var(--white);
+.nav-links a {
   text-decoration: none;
-  font-size: 0.85rem;
-  text-transform: uppercase;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: 0.3s ease;
   position: relative;
-  transition: var(--transition);
-  opacity: 0.8;
 }
 
-.link-item:hover {
-  opacity: 1;
-  color: var(--gold);
+.nav-links a:hover {
+  color: var(--text);
 }
 
-/* Hover underline effect */
-.link-item::after {
-  content: '';
+/* Elegant Hover Underline */
+.nav-item::after {
+  content: "";
   position: absolute;
-  bottom: -5px;
+  width: 0%;
+  height: 1.5px;
+  bottom: -6px;
   left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: var(--transition);
+  background: var(--accent);
+  transition: 0.4s ease;
 }
 
-.link-item:hover::after {
+.nav-item:hover::after {
   width: 100%;
 }
 
-.nav-btn-premium {
-  padding: 12px 25px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: var(--transition);
+/* Desktop CTA Button */
+.nav-cta {
+  border: 1.5px solid var(--text);
+  padding: 12px 30px;
+  color: var(--text) !important;
+  font-weight: 700 !important;
+  transition: var(--transition) !important;
 }
 
-.nav-btn-premium:hover {
-  background: var(--gold);
-  color: var(--white);
+.nav-cta:hover {
+  background: var(--text);
+  color: var(--white) !important;
+  transform: translateY(-3px);
 }
 
-/* Mobile Menu Icon */
-.menu-icon {
+/* --- MOBILE TOGGLE (BURGER) --- */
+.menu-toggle {
   display: none;
-  flex-direction: column;
-  gap: 6px;
+  background: none;
+  border: none;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 2500;
+  width: 40px;
+  height: 30px;
+  position: relative;
 }
 
-.line {
-  width: 28px;
-  height: 1px;
-  background: var(--white);
+.menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 1.8px;
+  background: var(--text);
   transition: var(--transition);
-}
-
-.menu-icon.active .top { transform: translateY(7px) rotate(45deg); }
-.menu-icon.active .mid { opacity: 0; }
-.menu-icon.active .bot { transform: translateY(-7px) rotate(-45deg); }
-
-/* Mobile Overlay */
-.mobile-overlay {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100vh;
-  background: var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-  z-index: 1050;
-}
-
-.mobile-overlay.open {
   right: 0;
 }
 
-.mobile-links {
+.line-top { top: 8px; width: 30px; }
+.line-bottom { top: 20px; width: 20px; } /* Boutique Style Asymmetric */
+
+.open .line-top {
+  transform: translateY(6px) rotate(45deg);
+  width: 30px;
+}
+
+.open .line-bottom {
+  transform: translateY(-6px) rotate(-45deg);
+  width: 30px;
+}
+
+/* --- MOBILE MENU OVERLAY --- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  z-index: 2100;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 35px;
+  padding: 0 40px;
+  
+  /* Reveal Animation */
+  clip-path: circle(0% at 90% 5%);
+  transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
 }
 
-.mobile-links a {
-  color: var(--white);
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+.mobile-menu.show {
+  clip-path: circle(150% at 90% 5%);
+  pointer-events: auto;
+}
+
+.menu-backdrop-text {
+  position: absolute;
+  font-family: "Cinzel", serif;
+  font-size: 30vh;
+  color: rgba(0,0,0,0.02);
+  font-weight: 700;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mobile-links-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu a {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
   text-decoration: none;
-  transition: 0.3s;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  
+  /* Staggered Slide In */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mobile-links a:hover {
-  color: var(--gold);
+.mobile-menu.show a {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--i) * 0.1s + 0.4s);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
+.mobile-menu a span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+.mob-btn {
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+.mobile-footer {
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-footer p {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 900px) {
   .nav-links { display: none; }
-  .menu-icon { display: flex; }
+  .menu-toggle { display: block; }
+  
+  .navbar { height: 80px; }
   .nav-container { padding: 0 25px; }
+  
+  .brand-logo-img { height: 45px; }
+  .brand-name { font-size: 1.4rem; letter-spacing: 3px; }
+  
+  .mobile-menu a { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .brand-name { font-size: 1.2rem; }
+  .mobile-menu a { font-size: 1.6rem; letter-spacing: 3px; }
 }

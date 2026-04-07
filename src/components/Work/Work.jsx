@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Work.css";
 
+// Assets path-ah check pannikkonga
 import weddingImg from "../../assets/wedding.jpeg";
 import wedding2Img from "../../assets/wedding-2.jpeg";
 import coupleImg from "../../assets/couple.jpeg";
@@ -13,73 +14,55 @@ import traditionalImg from "../../assets/traditional.jpeg";
 import cinematicImg from "../../assets/cinematic.jpeg";
 
 export default function Work() {
-
   const portfolio = [
-
-    { src: weddingImg, className: "img1", category: "Wedding" },
-    { src: candidImg, className: "img4", category: "Candid" },
-    { src: coupleImg, className: "img3", category: "Portrait" },
-    { src: portraitImg, className: "img2", category: "Couple" },
-    { src: wedding2Img, className: "img5", category: "Wedding" },
-    { src: receptionImg, className: "img6", category: "Engagement" },
-    { src: engagementImg, className: "img7", category: "Reception" },
-    { src: brideImg, className: "img8", category: "Bride" },
-    { src: traditionalImg, className: "img9", category: "Traditional" },
-    { src: cinematicImg, className: "img10", category: "Cinematic" },
-
+    { src: weddingImg, className: "tall", label: "01" },
+    { src: portraitImg, className: "wide", label: "02" },
+    { src: coupleImg, className: "small", label: "03" },
+    { src: candidImg, className: "medium", label: "04" },
+    { src: wedding2Img, className: "tall", label: "05" },
+    { src: receptionImg, className: "wide", label: "06" },
+    { src: engagementImg, className: "medium", label: "07" },
+    { src: brideImg, className: "small", label: "08" },
+    { src: traditionalImg, className: "tall", label: "09" },
+    { src: cinematicImg, className: "wide", label: "10" },
   ];
 
   return (
-
     <section className="work" id="work">
+      <div className="work-container">
+        
+        {/* HEADER - Minimalist & Clean */}
+        <div className="work-header">
+          <span className="work-tag">Portfolio</span>
+          <h2 className="work-title">Selected Works</h2>
+          <div className="work-divider"></div>
+        </div>
 
-      {/* HEADER */}
-      <div className="work-header">
-
-        <span className="work-tag">Our Portfolio</span>
-
-        <h2 className="work-title">Captured Memories</h2>
-
-        <div className="title-underline"></div>
-
-      </div>
-
-
-      {/* GRID */}
-      <div className="editorial-grid">
-
-        {portfolio.map((item, index) => (
-
-          <div className={`img ${item.className}`} key={index}>
-
-            <img
-              src={item.src}
-              alt={item.category}
-              loading="lazy"
-            />
-
-            <div className="overlay">
-              {item.category}
+        {/* EDITORIAL GRID */}
+        <div className="work-grid">
+          {portfolio.map((item, index) => (
+            <div className={`work-item ${item.className}`} key={index}>
+              <div className="work-img-box">
+                <img src={item.src} alt={item.category} loading="lazy" />
+                <div className="work-overlay">
+                  <span className="work-num">{item.label}</span>
+                  <div className="work-info">
+                    <p className="work-cat"></p>
+                  </div>
+                </div>
+              </div>
             </div>
+          ))}
+        </div>
 
-          </div>
-
-        ))}
-
+        {/* CTA BUTTON */}
+        <div className="work-footer">
+          <Link to="/gallery" className="btn-explore">
+            Explore All Memories
+            <span className="arrow">→</span>
+          </Link>
+        </div>
       </div>
-
-
-      {/* BUTTON */}
-      <Link to="/gallery">
-
-        <button className="view-more">
-          View More
-        </button>
-
-      </Link>
-
     </section>
-
   );
-
 }

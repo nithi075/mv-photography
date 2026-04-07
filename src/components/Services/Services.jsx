@@ -1,49 +1,59 @@
 import "./Services.css";
 
 export default function Services() {
+  const servicesList = [
+    {
+      id: "01",
+      title: "Wedding Storytelling",
+      desc: "Elegant wedding photography capturing real emotions and beautiful moments with a cinematic vision.",
+      tag: "LUXURY WEDDINGS"
+    },
+    {
+      id: "02",
+      title: "Couture Albums",
+      desc: "Premium quality album layouts designed with artistic storytelling and high-grade archival paper.",
+      tag: "PRINTED LEGACY"
+    },
+    {
+      id: "03",
+      title: "Cinematic Films",
+      desc: "Creative wedding films with high-end color grading and emotional narrative-driven editing.",
+      tag: "MOTION PICTURE"
+    }
+  ];
+
   return (
     <section className="services" id="services">
       <div className="services-container">
         
         <div className="services-header">
           <span className="services-tag">Our Expertise</span>
-          <h2 className="services-title">Bespoke Services</h2>
-          <p className="services-desc">
-            We provide complete photography solutions from capture
-            to premium album design with timeless elegance.
-          </p>
+          <h2 className="services-title">Bespoke <br/> Photography <span className="title-accent">Services</span></h2>
+          <div className="header-divider"></div>
         </div>
 
-        <div className="services-grid">
-          <div className="service-card">
-            <div className="service-number">01</div>
-            <h3>Wedding Shoot</h3>
-            <div className="card-line"></div>
-            <p>
-              Elegant wedding photography capturing
-              real emotions and beautiful moments.
-            </p>
-          </div>
+        <div className="services-list-wrapper">
+          {servicesList.map((service, index) => (
+            <div className="service-row" key={index}>
+              <div className="service-id-box">
+                <span className="service-number">{service.id}</span>
+              </div>
+              
+              <div className="service-info-box">
+                <span className="service-item-tag">{service.tag}</span>
+                <h3 className="service-item-title">{service.title}</h3>
+                <p className="service-item-desc">{service.desc}</p>
+              </div>
 
-          <div className="service-card">
-            <div className="service-number">02</div>
-            <h3>Album Design</h3>
-            <div className="card-line"></div>
-            <p>
-              Premium quality album layouts designed
-              with artistic storytelling style.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <div className="service-number">03</div>
-            <h3>Cinematic Video</h3>
-            <div className="card-line"></div>
-            <p>
-              Creative cinematic wedding films with
-              smooth editing and color grading.
-            </p>
-          </div>
+              <div className="service-action">
+                <div className="service-circle-btn">
+                  <span>Explore</span>
+                </div>
+              </div>
+              
+              <div className="row-bg-line"></div>
+            </div>
+          ))}
         </div>
         
       </div>

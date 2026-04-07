@@ -1,141 +1,121 @@
-.about{
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
 
-padding:110px 20px;
-
-text-align:center;
-
-/* match hero dark tone */
-background:white;
-
-font-family:'Playfair Display', serif;
-
-color:black;
-
+.about {
+  padding: 180px 60px;
+  background-color: #ffffff; /* Pure White Background */
+  color: #111;
 }
 
-/* small heading */
-.about-small{
-
-font-size:12px;
-
-letter-spacing:3px;
-
-text-transform:uppercase;
-
-opacity:.6;
-
-display:block;
-
-margin-bottom:20px;
-
+.about-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Split layout */
+  gap: 80px;
 }
 
-/* title */
-.about h2{
-
-max-width:720px;
-
-margin:auto;
-
-margin-bottom:22px;
-
-font-size:34px;
-
-font-weight:500;
-
-line-height:1.4;
-
-letter-spacing:.5px;
-
+/* --- Left Side Styling --- */
+.about-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #FF8C00; /* MV Orange */
+  display: block;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
-/* elegant divider */
-.divider{
-
-width:70px;
-height:1px;
-
-/* soft luxury color */
-background:rgba(255,255,255,.35);
-
-margin:28px auto;
-
+.about-main-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
-/* paragraph */
-.about p{
-
-max-width:640px;
-
-margin:auto;
-
-font-size:15px;
-
-line-height:1.9;
-
-opacity:.75;
-
-margin-bottom:35px;
-
+.accent-italic {
+  font-style: italic;
+  font-weight: 400;
+  color: #FF8C00;
 }
 
-/* signature */
-.signature{
-
-font-size:18px;
-
-letter-spacing:3px;
-
-opacity:.5;
-
-font-style:italic;
-
+/* --- Right Side Styling --- */
+.about-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* tablet */
-@media(min-width:768px){
-
-.about{
-
-padding:130px 20px;
-
+.about-lead {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #000;
 }
 
-.about h2{
-
-font-size:38px;
-
+.about-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 50px;
 }
 
-.about p{
-
-font-size:16px;
-
+/* --- Stats Styling --- */
+.about-stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
 }
 
+.stat-num {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #111;
+  margin-bottom: 5px;
 }
 
-/* desktop */
-@media(min-width:1024px){
-
-.about{
-
-padding:150px 20px;
-
+.stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
 }
 
-.about h2{
-
-font-size:42px;
-
-max-width:760px;
-
+/* --- Signature Styling --- */
+.about-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.about p{
-
-max-width:700px;
-
+.signature-line {
+  width: 40px;
+  height: 1.5px;
+  background: #FF8C00;
 }
 
+.signature-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .about { padding: 100px 30px; }
+}
+
+@media (max-width: 600px) {
+  .about-main-title { font-size: 2.5rem; }
+  .about-stats { flex-direction: column; gap: 30px; }
 }

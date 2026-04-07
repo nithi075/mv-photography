@@ -1,110 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+
 .services {
-  padding: 120px 5%;
-  background-color: #fdfcf9; /* Light Warm Theme */
-  color: #1a1a1a;
-  text-align: center;
+  padding: 160px 60px;
+  background-color: #ffffff;
+  color: #111;
 }
 
 .services-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
+/* --- Header Styling --- */
 .services-header {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
 
 .services-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  color: #b3945a;
+  color: #FF8C00;
+  font-weight: 700;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .services-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: #111;
+}
+
+.title-accent {
+  font-style: italic;
   font-weight: 400;
-  margin-bottom: 20px;
+  color: #999;
 }
 
-.services-desc {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  color: #666;
-  line-height: 1.6;
-  font-weight: 300;
+.header-divider {
+  width: 60px;
+  height: 2px;
+  background: #FF8C00;
+  margin-top: 30px;
 }
 
-/* Services Grid Layout */
-.services-grid {
+/* --- List Row Styling --- */
+.services-list-wrapper {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.service-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.service-card {
-  padding: 50px 40px;
-  background: transparent;
-  border: 1px solid #eee; /* Very thin subtle border */
-  text-align: left;
-  transition: all 0.5s ease;
+  grid-template-columns: 150px 1fr 200px;
+  padding: 60px 0;
   position: relative;
+  align-items: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-/* Hover Effect: Border changes to Gold and subtle Shadow */
-.service-card:hover {
-  border-color: #b3945a;
-  transform: translateY(-10px);
-  background: #fff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+.service-row:hover {
+  background: #fafafa;
+  padding-left: 30px;
 }
 
+/* Number Styling */
 .service-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.9rem;
-  color: #b3945a;
-  margin-bottom: 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #ddd;
+  transition: color 0.4s ease;
+}
+
+.service-row:hover .service-number {
+  color: #FF8C00;
+}
+
+/* Content Styling */
+.service-item-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #999;
   display: block;
-  opacity: 0.6;
+  margin-bottom: 10px;
 }
 
-.service-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 400;
+.service-item-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
   margin-bottom: 15px;
-  letter-spacing: 1px;
+  color: #111;
 }
 
-.card-line {
-  width: 30px;
-  height: 1px;
-  background: #b3945a;
-  margin-bottom: 20px;
-  transition: width 0.4s ease;
-}
-
-.service-card:hover .card-line {
-  width: 60px; /* Line expands on hover */
-}
-
-.service-card p {
-  font-size: 0.95rem;
+.service-item-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
   line-height: 1.7;
-  color: #777;
-  font-weight: 300;
+  color: #666;
+  max-width: 600px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .services {
-    padding: 80px 20px;
+/* Circle Button Animation */
+.service-circle-btn {
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: scale(0.5) rotate(-45deg);
+}
+
+.service-row:hover .service-circle-btn {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .service-row {
+    grid-template-columns: 80px 1fr;
+    padding: 40px 0;
   }
-  .services-title {
-    font-size: 2.2rem;
-  }
+  .service-action { display: none; }
+}
+
+@media (max-width: 600px) {
+  .services { padding: 80px 25px; }
+  .service-row { display: block; }
+  .service-id-box { margin-bottom: 15px; }
+  .service-item-title { font-size: 1.6rem; }
+  .service-row:hover { padding-left: 15px; }
 }
